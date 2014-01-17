@@ -1,0 +1,16 @@
+<!DOCTYPE HTML>
+	<head>
+		<link rel="stylesheet" type = "text/css" href ="stylesheets/style.css">
+		<title>Movie Search Results</title>
+	</head>
+	<body>
+	
+		<h1>Movie Results</h1>
+		<% @result["Search"].map do |search| %> 
+		<ul>
+			<li>
+ 				<%= "#{search["Title"]}" %> 
+			</li>
+			<% end %>
+		</ul>
+	</body>cars
