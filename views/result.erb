@@ -1,8 +1,7 @@
 		<h1>Movie Results</h1>
 		<ul>
 		<% @result["Search"].map do |search| %> 	
-<%= "<a href=\'/poster/#{search["imdbID"]}'> 
-		<li> Title: #{search["Title"]} -- Year: #{search["Year"]}" %>
-		</li></a>		
+<%= "<a href=/poster/#{search["imdbID"]}><li> Title: #{search["Title"]} -- Year: #{search["Year"]}</li></a>" %>
+			
 		<% end %>
 		</ul>
