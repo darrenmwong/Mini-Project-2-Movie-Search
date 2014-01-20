@@ -17,10 +17,6 @@ end
 
 
 get '/poster/:imdb' do |imdb_id|
-  search_str = params[:movie]
-  response = Typhoeus.get("www.omdbapi.com/", :params => {:s => search_str})
-  @result = JSON.parse(response.body)
-
   key = Typhoeus.get("www.omdbapi.com", :params => {:i => "#{imdb_id}"})
   @poster_id = JSON.parse(key.body)
   erb :poster

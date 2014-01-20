@@ -1,15 +1,90 @@
-<title>Movie Poster</title>
-<h1>Movie Poster</h1>
- <%= "<img src=#{@poster_id["Poster"]}><br>" %>
-  <ul>
-  	<li>Plot: <%= @poster_id["Plot"] %> </li>
-  	<li>Released Year: <%= @poster_id["Released"] %> </li>
-  	<li>Rated: <%= @poster_id["Runtime"] %> </li>
-  	<li>Genre: <%= @poster_id["Genre"] %> </li>
-  	<li>Runtime: <%= @poster_id["Runtime"] %> </li>
-  	<li>Director: <%= @poster_id["Director"] %> </li>
-  	<li>Actors: <%= @poster_id["Actors"] %> </li>
-	</ul>
- 
- <a href="/">New Search</a>
+
+
+
+
+<!-- Modal -->
+
+<div class="col-md-12 text-right">
+<button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+ 	More Info
+</button>
+</div>
+
+
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">More Info</button>
+       <h4 class="modal-title" id="myModalLabel"><%= @poster_id['Title'] %></h4>
+      </div>
+      <div class="modal-body">
+          <ul>
+
+  			<li>Plot: <%= @poster_id["Plot"] %> </li>
+  			<li>Released Year: <%= @poster_id["Released"] %> </li>
+  			<li>Rated: <%= @poster_id["Rated"] %> </li>
+  			<li>Genre: <%= @poster_id["Genre"] %> </li>
+  			<li>Runtime: <%= @poster_id["Runtime"] %> </li>
+  			<li>Director: <%= @poster_id["Director"] %> </li>
+  			<li>Actors: <%= @poster_id["Actors"] %> </li>
+	  	</ul>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal --> 
+
+<!-- Second BAR -->
+
+<div class="jumbotron">
+<title>Movie Info</title>
+<h1>Movie Info</h1>
+<form class="form-header" accept-charset="UTF-8" action="/result" method="post">
+      <label for="movie">Search Again:</label>
+      <input id="movie" name="movie" type="text" />
+      <input name="commit" type="submit" value="Search"button type="button" class="btn btn-primary btn-sm" /> 
+      </form>
+</div>
+
+
+<!-- Poster Bar -->
+
+ <div class="col-md-12 text-right">
+	<div class="col-sm-6 text-center">
+		<div class="row"> 
+    <%= "<img src=#{@poster_id["Poster"]}" %> 
+		</div>
+	</div>
+</div>
+
+
+<div class="font">
+	<div class="row">
+		<div class="col-lg-6 col-md-6 col-sm-6 text-left">
+			<ul>
+   <h2 class="featurette-heading">
+    <li><strong><span class="text-muted">
+    	Plot:</strong> <%= @poster_id["Plot"] %> </li></span>
+	</h2>
+  	<p class="lead">
+  	<li><strong><span class="text-muted">
+  		Released Year:</strong> <%= @poster_id["Released"] %> </l></span>
+  	<li><strong><span class="text-muted">
+  		Rated:</strong> <%= @poster_id["Rated"] %> </li></span>
+  	<li><strong><span class="text-muted">
+  		Genre:</strong> <%= @poster_id["Genre"] %> </li></span>
+  	<li><strong><span class="text-muted">
+  		Runtime:</strong> <%= @poster_id["Runtime"] %> </li></span>
+  	<li><strong><span class="text-muted">
+  		Director:</strong> <%= @poster_id["Director"] %> </li></span>
+  	<li><strong><span class="text-muted">
+  		Actors:</strong> <%= @poster_id["Actors"] %> </li></span>
+  	</p>
+		  </ul>
+		</div>
+	</div>
+</div>
 
